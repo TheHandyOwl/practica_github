@@ -147,6 +147,7 @@ Deleted branch title (was 7de0495).
 ```
 
 - ¿Qué comando o comandos utilizaste en el paso 30?
+
 Buscar con reflog, vemos que la diferencia está en el título, y un merge para volver al commit del merge, que es un fast-forward.
 
 ```

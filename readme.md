@@ -2,7 +2,8 @@
 
 - ¿Qué comando utilizaste en el paso 11? ¿Por qué?
 
-```$ git reset --hard HEAD~1
+```
+$ git reset --hard HEAD~1
 HEAD is now at 1489c3e Primer git nuestro
 ```
 
@@ -11,7 +12,8 @@ Así que ‘git reset’ con la opción ‘--hard’ y para que sea el último a
 
 - ¿Qué comando o comandos utilizaste en el paso 12? ¿Por qué?
 
-```$ git reflog
+```
+$ git reflog
 1489c3e HEAD@{0}: reset: moving to HEAD~1
 2c3a6a1 HEAD@{1}: commit: Modifico git-nuestro por primera vez
 1489c3e HEAD@{2}: checkout: moving from master to styled
@@ -22,9 +24,14 @@ Updating 1489c3e..2c3a6a1
 Fast-forward
  git-nuestro.md | 19 +++++++++----------
  1 file changed, 9 insertions(+), 10 deletions(-)
+```
+
 - El merge del paso 13, ¿Causó algún conflicto? ¿Por qué?
+
 No causó conflicto, porque master no ha sido modificada, y styled sí.
 Pero styled está modificada con master como base y, por tanto, prevalecen los cambios de styled. Si hubiéramos modificado alguna línea de master sí que se hubiera generado conflicto.
+
+```
 $ git merge master
 Already up-to-date.
 ```
@@ -37,7 +44,8 @@ Para estar seguro de cuál era el commit que buscaba, he utilizado ‘reflog’
 Sí hay conflicto.
 Cada rama realiza cambios desde el mismo padre, se están cambiando las mismas líneas ramas distintas generando el conflicto.
 
-```$ git merge htmlify
+```
+$ git merge htmlify
 Auto-merging git-nuestro.md
 CONFLICT (content): Merge conflict in git-nuestro.md
 Automatic merge failed; fix conflicts and then commit the result.
@@ -48,7 +56,8 @@ Automatic merge failed; fix conflicts and then commit the result.
 No hay conflicto.
 La rama base styled partió de master, y master no se ha modificado en ningún momento. La rama style ha avanzado, y ahora master avanza con el fast-forward hasta ‘replicar’ lo que ha hecho la rama styled.
 
-```$ git merge styled
+```
+$ git merge styled
 Updating 1489c3e..ad329e3
 Fast-forward
  git-nuestro.md | 19 +++++++++----------
@@ -58,11 +67,16 @@ Fast-forward
 - ¿Qué comando o comandos utilizaste en el paso 25?
 
 He utilizado 2:
-Personalizar alias para ahorrar modificadores
-Ejecutar el comando personalizado
 
-```$ git config alias.graph "log --graph --decorate --pretty=oneline"
+1. Personalizar alias para ahorrar modificadores    
 
+```
+$ git config alias.graph "log --graph --decorate --pretty=oneline"
+```
+
+2. Ejecutar el comando personalizado
+
+```
 $ git graph
 *   ad329e3e662d5016440dc2f2f0867976dcc698ca (HEAD -> master, styled) Merge branch 'htmlify' into styled
 |\
@@ -77,7 +91,8 @@ $ git graph
 Sí se podría hacer un fast-forward porque title parte de la rama master, hace sus modificaciones, y ahora la rama master sube hasta igualar la rama title.
 Si hacemos un git diff title veremos que tan sólo cambia el título.
 
-```$ git diff title
+```
+$ git diff title
 diff --git a/git-nuestro.md b/git-nuestro.md
 index bc50ea9..b09c8eb 100644
 --- a/git-nuestro.md
@@ -100,7 +115,8 @@ Merge made by the 'recursive' strategy.
 
 En este caso nos olvidamos de --hard para mantener los cambios en el working copy
 
-```$ git reset HEAD~1
+```
+$ git reset HEAD~1
 Unstaged changes after reset:
 M       git-nuestro.md
 ```
@@ -109,7 +125,8 @@ M       git-nuestro.md
 
 He recuperado la ultima version del repositorio
 
-```$ git checkout -- git-nuestro.md
+```
+$ git checkout -- git-nuestro.md
 
 $ git status
 On branch master
@@ -118,17 +135,22 @@ nothing to commit, working tree clean
 
 - ¿Qué comando o comandos utilizaste en el paso 29?
 
-Primero le he preguntado si me dejaba borrar la rama y decía que quedaba huérfana. Así que he forzado el borrado
+Primero le he preguntado si me dejaba borrar la rama y decía que se quedaba huérfana. Así que he forzado el borrado
 
-```$ git branch -d title
+```
+$ git branch -d title
 error: The branch 'title' is not fully merged.
 If you are sure you want to delete it, run 'git branch -D title'.
 
 $ git branch -D title
 Deleted branch title (was 7de0495).
+```
+
 - ¿Qué comando o comandos utilizaste en el paso 30?
+
 Buscar con reflog, vemos que la diferencia está en el título, y un merge para volver al commit del merge, que es un fast-forward.
 
+```
 $ git reflog
 ad329e3 HEAD@{0}: reset: moving to HEAD~1
 2a595bb HEAD@{1}: merge title: Merge made by the 'recursive' strategy.
@@ -158,7 +180,8 @@ Fast-forward
 
 Buscar el commit con reflog y con checkout hasta al inicial.
 
-```$ git reflog
+```
+$ git reflog
 2a595bb HEAD@{0}: merge 2a595bb: Fast-forward
 ad329e3 HEAD@{1}: reset: moving to HEAD~1
 2a595bb HEAD@{2}: merge title: Merge made by the 'recursive' strategy.
@@ -198,7 +221,8 @@ HEAD is now at 1489c3e... Primer git nuestro
 Podríamos tirar de reflog, pero tenemos la rama master en el último commit, desde el que hemos saltado al commit inicial.
 Usamos git graph para ver que el id es el commit del último merge
 
-```$ git checkout master
+```
+$ git checkout master
 Previous HEAD position was 1489c3e... Primer git nuestro
 Switched to branch 'master'
 

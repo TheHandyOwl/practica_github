@@ -67,8 +67,10 @@ Fast-forward
 - ¿Qué comando o comandos utilizaste en el paso 25?
 
 He utilizado 2:
-    -Personalizar alias para ahorrar modificadores
-    -Ejecutar el comando personalizado
+
+1. Personalizar alias para ahorrar modificadores    
+
+2. Ejecutar el comando personalizado
 
 ```
 $ git config alias.graph "log --graph --decorate --pretty=oneline"

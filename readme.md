@@ -70,11 +70,13 @@ He utilizado 2:
 
 1. Personalizar alias para ahorrar modificadores    
 
+```
+$ git config alias.graph "log --graph --decorate --pretty=oneline"
+```
+
 2. Ejecutar el comando personalizado
 
 ```
-$ git config alias.graph "log --graph --decorate --pretty=oneline"
-
 $ git graph
 *   ad329e3e662d5016440dc2f2f0867976dcc698ca (HEAD -> master, styled) Merge branch 'htmlify' into styled
 |\
@@ -133,7 +135,7 @@ nothing to commit, working tree clean
 
 - ¿Qué comando o comandos utilizaste en el paso 29?
 
-Primero le he preguntado si me dejaba borrar la rama y decía que quedaba huérfana. Así que he forzado el borrado
+Primero le he preguntado si me dejaba borrar la rama y decía que se quedaba huérfana. Así que he forzado el borrado
 
 ```
 $ git branch -d title
@@ -142,9 +144,12 @@ If you are sure you want to delete it, run 'git branch -D title'.
 
 $ git branch -D title
 Deleted branch title (was 7de0495).
+```
+
 - ¿Qué comando o comandos utilizaste en el paso 30?
 Buscar con reflog, vemos que la diferencia está en el título, y un merge para volver al commit del merge, que es un fast-forward.
 
+```
 $ git reflog
 ad329e3 HEAD@{0}: reset: moving to HEAD~1
 2a595bb HEAD@{1}: merge title: Merge made by the 'recursive' strategy.

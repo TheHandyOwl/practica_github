@@ -67,9 +67,7 @@ Fast-forward
 - ¿Qué comando o comandos utilizaste en el paso 25?
 
 He utilizado 2:
-
     -Personalizar alias para ahorrar modificadores
-
     -Ejecutar el comando personalizado
 
 ```

@@ -24,9 +24,13 @@ Updating 1489c3e..2c3a6a1
 Fast-forward
  git-nuestro.md | 19 +++++++++----------
  1 file changed, 9 insertions(+), 10 deletions(-)
+```
+
 - El merge del paso 13, ¿Causó algún conflicto? ¿Por qué?
 No causó conflicto, porque master no ha sido modificada, y styled sí.
 Pero styled está modificada con master como base y, por tanto, prevalecen los cambios de styled. Si hubiéramos modificado alguna línea de master sí que se hubiera generado conflicto.
+
+```
 $ git merge master
 Already up-to-date.
 ```

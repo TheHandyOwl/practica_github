@@ -27,6 +27,7 @@ Fast-forward
 ```
 
 - El merge del paso 13, ¿Causó algún conflicto? ¿Por qué?
+
 No causó conflicto, porque master no ha sido modificada, y styled sí.
 Pero styled está modificada con master como base y, por tanto, prevalecen los cambios de styled. Si hubiéramos modificado alguna línea de master sí que se hubiera generado conflicto.
 
@@ -66,8 +67,8 @@ Fast-forward
 - ¿Qué comando o comandos utilizaste en el paso 25?
 
 He utilizado 2:
-Personalizar alias para ahorrar modificadores
-Ejecutar el comando personalizado
+--Personalizar alias para ahorrar modificadores
+--Ejecutar el comando personalizado
 
 ```
 $ git config alias.graph "log --graph --decorate --pretty=oneline"

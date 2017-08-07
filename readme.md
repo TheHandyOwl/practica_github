@@ -1,3 +1,11 @@
+# [Práctica GitHub][repo]
+
+**Práctica de GitHub - KC Mobile Bootcamp V Edición**
+
+Curso presencia. de apertura.
+
+----------
+
 # practica_github
 
 - ¿Qué comando utilizaste en el paso 11? ¿Por qué?
@@ -238,3 +246,5 @@ $ git graph
 |/
 * 1489c3e964f61dd5122ab87184d1919d7eb2fda6 Primer git nuestro
 ```
+
+  [repo]: https://github.com/TheHandyOwl/practica_github

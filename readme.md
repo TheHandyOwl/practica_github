@@ -2,7 +2,7 @@
 
 **Práctica de GitHub - KC Mobile Bootcamp V Edición**
 
-Curso presencia. de apertura.
+Curso presencial de apertura del V Bootcamp.
 
 ----------
 
